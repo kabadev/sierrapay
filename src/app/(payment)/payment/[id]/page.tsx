@@ -12,7 +12,7 @@ export default async function PaymentPage({
   return (
     <main className="min-h-screen overflow-y-auto">
       <div className="flex items-center justify-center">
-        <div className="w-full md:w-[60%] bg-background shadow-md pb-20">
+        <div className="w-full md:w-[60%] bg-background shadow-md pb-52">
           <div className="flex items-center h-16 bg-primary">
             <Link href={"/recharge"}>
               <Button className="hover:opacity-70">

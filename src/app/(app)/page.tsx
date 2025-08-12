@@ -93,9 +93,9 @@ export default async function Home() {
   const transactions = await getUserTransactions(user?.id!);
 
   return (
-    <main className="h-[calc(100vh-70px)] overflow-y-auto max-md:p-3">
+    <main className="h-[calc(100vh-70px)] overflow-y-auto max-md:p-3 ">
       <div className="flex items-center justify-center">
-        <div className="w-full md:w-[60%] bg-background h-full  pb-20">
+        <div className="w-full md:w-[60%] bg-background h-full  pb-52">
           <Hero />
 
           <div className="px-2 ">

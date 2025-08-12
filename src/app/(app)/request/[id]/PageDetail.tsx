@@ -55,7 +55,7 @@ const PayRequestPayment = ({ paymentDetail }: any) => {
   return (
     <main className="h-[calc(100vh-70px)] overflow-y-auto">
       <div className="flex items-center justify-center">
-        <div className="w-full md:w-[60%] bg-background shadow-md pb-20">
+        <div className="w-full md:w-[60%] bg-background shadow-md pb-52">
           <div className="flex items-center h-14 bg-primary">
             <Link href={"/"}>
               <Button className="hover:opacity-70">
@@ -65,7 +65,7 @@ const PayRequestPayment = ({ paymentDetail }: any) => {
             <h2 className="text-white font-bold text-md">Recharge</h2>
           </div>
 
-          {!success ? (
+          {success ? (
             <main className="flex flex-col items-center justify-center min-h-[calc(100vh-70px)] p-6 text-center">
               <CheckCircle2 size={80} className="text-green-500" />
               <h1 className="text-3xl font-bold mt-4 text-green-600">

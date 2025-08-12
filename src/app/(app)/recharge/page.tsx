@@ -2,6 +2,7 @@
 import CurrencyFormater from "@/components/cwinui/CurrencyFormater";
 import { Button } from "@/components/ui/button";
 import { useUserContext } from "@/context/userContext";
+import { useUser } from "@clerk/nextjs";
 import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,7 +11,8 @@ import React, { useEffect, useState } from "react";
 
 const Recharge = () => {
   const router = useRouter();
-  const { currentUserDetail } = useUserContext();
+  const { user } = useUser();
+
   const [amount, setAmount] = useState<number | string>(10);
   const [mobile, setMobile] = useState<string>("");
   const [error, setError] = useState("");
@@ -53,7 +55,8 @@ const Recharge = () => {
   };
 
   const handleMobileChange = (value: string) => {
-    setMobile(formatMobile(value));
+    setMobile(value);
+    // formatMobile(value)
   };
 
   const handleBuy = async () => {
@@ -87,9 +90,8 @@ const Recharge = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          userId: currentUserDetail?.id,
-          fullName:
-            currentUserDetail?.firstName + " " + currentUserDetail?.lastName,
+          userId: user?.id!,
+          fullName: user?.firstName + " " + user?.lastName,
           amount: amount,
           mobile: mobile,
         }),
@@ -109,7 +111,7 @@ const Recharge = () => {
   return (
     <main className="h-[calc(100vh-70px)] overflow-y-auto">
       <div className="flex items-center justify-center">
-        <div className="w-full md:w-[60%] bg-background shadow-md pb-20">
+        <div className="w-full md:w-[60%] bg-background shadow-md pb-52">
           <div className="flex items-center h-14 bg-primary">
             <Link href={"/"}>
               <Button className="hover:opacity-70">

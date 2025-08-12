@@ -127,7 +127,7 @@ const Recharge = () => {
   return (
     <main className="h-[calc(100vh-70px)] overflow-y-auto">
       <div className="flex items-center justify-center">
-        <div className="w-full md:w-[60%] bg-background shadow-md pb-20">
+        <div className="w-full md:w-[60%] bg-background shadow-md pb-52">
           <div className="flex items-center h-14 bg-primary">
             <Link href={"/"}>
               <Button className="hover:opacity-70">
