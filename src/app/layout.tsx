@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 
 import { UserProvider } from "@/context/userContext";
 
-const inter = Inter({ subsets: ["latin"] });
+import { Poppins } from "next/font/google";
 
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
+});
 export const metadata: Metadata = {
-  title: "Monitm",
+  title: "Sierrapay",
   description: "Your smart payment system",
 };
 
@@ -21,7 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <ClerkProvider>
         <UserProvider>
-          <body>{children}</body>
+          <body className={`${poppins.variable}`}>{children}</body>
         </UserProvider>
       </ClerkProvider>
     </html>
