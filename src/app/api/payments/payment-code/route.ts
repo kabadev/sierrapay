@@ -46,7 +46,7 @@ export async function POST(request: Request) {
     }
 
     const bodydata = {
-      name: "SierraPay Transaction",
+      name: "Testing Transaction",
       mode: "recurrent",
       isActive: true,
       amount: {
@@ -54,12 +54,12 @@ export async function POST(request: Request) {
         value: amount * 100,
       },
       duration: "5m",
-      customerTarget: {
-        name: fullName,
-        reference: `Ref_${Date.now()}`,
-        payingPhoneNumber: "0" + mobile,
-      },
-      // allowedProviders: ["m17", "m18"],
+      // customerTarget: {
+      //   name: fullName,
+      //   reference: `Ref_${Date.now()}`,
+      //   payingPhoneNumber: "0" + mobile,
+      // },
+      allowedProviders: ["m17", "m18"],
       metadata: {
         amount: amount.toString(),
         name: fullName,

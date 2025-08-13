@@ -72,7 +72,7 @@ const Recharge = () => {
   };
 
   const handleMobileChange = (value: string) => {
-    setMobile(formatMobile(value));
+    setMobile(value);
   };
 
   const handleBuy = async () => {
