@@ -46,7 +46,7 @@ export async function POST(request: Request) {
     }
 
     const bodydata = {
-      name: "Testing Transaction",
+      name: "Sierrapay Transaction",
       mode: "recurrent",
       isActive: true,
       amount: {

@@ -1,3 +1,4 @@
+import InstallPrompt from "@/components/InstallPrompt";
 import { Button } from "@/components/ui/button";
 import { UserProfile } from "@clerk/nextjs";
 import { ArrowLeft } from "lucide-react";
@@ -18,6 +19,7 @@ const page = () => {
             <h2 className="text-white font-bold text-md">Profile</h2>
           </div>
           <div className="mt-4 w-full">
+            <InstallPrompt />
             <UserProfile />
           </div>
         </div>
