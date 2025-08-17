@@ -31,7 +31,9 @@ export default function RootLayout({
 
       <ClerkProvider>
         <UserProvider>
-          <body className={`${poppins.variable}`}>{children}</body>
+          <body className={`${poppins.variable}`}>
+            
+            {children}</body>
         </UserProvider>
       </ClerkProvider>
     </html>

@@ -91,7 +91,7 @@ export default async function Home() {
   const user = await currentUser();
 
   const transactions = await getUserTransactions(user?.id!);
-
+   
   return (
     <main className="h-[calc(100vh-70px)] overflow-y-auto max-md:p-3 ">
       <div className="flex items-center justify-center">
